@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # usage: ./analyze.py dump.txt 
 import sys
+import re
 for arg in sys.argv:
     if 'txt' in arg:
         f = open(arg, 'r')
@@ -27,10 +28,12 @@ for line in f:
     if not '#code2014' in line:
         continue
     row_num = 0
+    words = re.split('[\s,.]', line.lower())
+    print words
     for lang1 in Languages:
-        if lang1 in line:
+        if lang1 in words:
             for lang2 in Languages[row_num+1:]:
-                if lang2 in line:
+                if lang2 in words:
                     pair = [lang1, lang2]
                     pair.sort()
                     matrix[pair[0]][pair[1]] += 1
