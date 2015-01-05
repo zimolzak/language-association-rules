@@ -29,7 +29,6 @@ for line in f:
         continue
     row_num = 0
     words = re.split('[\s,.]', line.lower())
-    print words
     for lang1 in Languages:
         if lang1 in words:
             for lang2 in Languages[row_num+1:]:
@@ -42,7 +41,6 @@ for line in f:
 rownames = matrix.keys()
 rownames.sort()
 
-print "\t",
 for label in rownames:
     print label[0:6], "\t",
 print "\n",
@@ -53,7 +51,8 @@ for i in rownames:
     print ("\t" * row_num),
     colnames = matrix[i].keys()
     colnames.sort()
-    print i[0:6], "\t", 
     for j in colnames:
         print matrix[i][j], "\t",
-    print "\n",
+    print i[0:6]
+
+## NEXT STEP, get it into R and use library(arules) !!
