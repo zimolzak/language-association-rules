@@ -36,4 +36,12 @@ for line in f:
                     matrix[pair[0]][pair[1]] += 1
         row_num += 1
 
-print matrix
+rownames = matrix.keys()
+rownames.sort()
+for i in rownames:
+    colnames = matrix[i].keys()
+    colnames.sort()
+    print i[0:6], "\t", 
+    for j in colnames:
+        print matrix[i][j], "\t",
+    print "\n",
