@@ -38,6 +38,12 @@ for line in f:
 
 rownames = matrix.keys()
 rownames.sort()
+
+print "\t",
+for label in rownames:
+    print label[0:6], "\t",
+print "\n",
+
 for i in rownames:
     colnames = matrix[i].keys()
     colnames.sort()
