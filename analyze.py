@@ -44,7 +44,10 @@ for label in rownames:
     print label[0:6], "\t",
 print "\n",
 
+row_num = 0
 for i in rownames:
+    row_num += 1
+    print ("\t" * row_num),
     colnames = matrix[i].keys()
     colnames.sort()
     print i[0:6], "\t", 
