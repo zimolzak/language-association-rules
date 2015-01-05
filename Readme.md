@@ -13,7 +13,8 @@ Process: go to Twitter, search for the hashtag, hit "end" a bunch of
 times so it loads more tweets, and copy-paste the resulting long Web
 page out of the browser window and into a plain text file called
 `output.txt`. Obviously I wanted to do this fast (read: 1 hour) and
-not right.
+not right. These people are doing it right:
+https://github.com/hybridgroup/hashcode
 
 Usage:
 
@@ -22,11 +23,11 @@ Usage:
 To do
 ----
 
-# For data import, use a package that actually uses the Twitter API.
+* For data import, use a package that actually uses the Twitter API.
 Such as: https://github.com/sixohsix/twitter
 
-# For analysis, use an actual association rules package. Such as:
+* For analysis, use an actual association rules package. Such as:
 http://www.cs.umb.edu/~laur/ARMiner/ or
 http://cran.r-project.org/web/packages/arules/index.html
 
-# Heat map, obvs.
+* Heat map, obvs.
