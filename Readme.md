@@ -30,11 +30,11 @@ http://www.code2014.com/
 
 I decided to use the tweets in response to that survey as a data set.
 Right now to get the data in, I do something monstrously ugly.
-Process: go to Twitter, search for the hashtag, hit "end" a bunch of
-times so it loads more tweets, and copy-paste the resulting long Web
-page out of the browser window and into a plain text file called
-`output.txt`. Obviously I wanted to do this fast (read: 1 hour) and
-not right. These people are doing it right:
+Process: go to Twitter.com, search for the hashtag, hit the keyboard
+"end" key a bunch of times so it loads more tweets, and copy-paste the
+resulting long Web page out of the browser window and into a plain
+text file called `dump.txt`. Obviously I wanted to do this fast (read:
+1 hour) and not right. These people are doing it right:
 https://github.com/hybridgroup/hashcode
 
 Usage:
