@@ -11,9 +11,9 @@ Languages = ['javascript', 'python', 'java', 'ruby', 'sql', 'bash', \
                  'scala', 'objective-c', 'swift', 'delphi', 'f#',\
                  'coffeescript', 'erlang', 'rust', 'r', 'groovy', 'lua',\
                  'perl']
-
 Languages.sort()
 
+# create triangular matrix filled with 0s.
 matrix = dict()
 row_num = 0
 for row in Languages:
@@ -23,6 +23,7 @@ for row in Languages:
     matrix[row] = new_row
     row_num += 1
 
+# populate matrix with counts of language pairs
 for line in f:
     languages_mentioned = []
     if not '#code2014' in line:
@@ -38,13 +39,12 @@ for line in f:
                     matrix[pair[0]][pair[1]] += 1
         row_num += 1
 
+# print matrix
 rownames = matrix.keys()
 rownames.sort()
-
 for label in rownames:
     print label[0:6], "\t",
 print "\n",
-
 row_num = 0
 for i in rownames:
     row_num += 1
