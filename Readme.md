@@ -16,7 +16,7 @@ functional languages.
 Conclusions
 ----
 
-*By inspection of counts of co-occurence:* I think I see an
+*By inspection of counts of co-occurrence:* I think I see an
 association between Clojure and Scala. Maybe not the other functional
 ones? C and JavaScript look like they might avoid each other. Swift
 and Objective-C look like they are friends, which makes a heck of a
