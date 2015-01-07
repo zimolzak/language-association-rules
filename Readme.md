@@ -13,38 +13,42 @@ bet you used some other functional ones too; as opposed to using one
 functional language, getting locked into it, and avoiding other
 functional languages.
 
-Rough conclusions
+Conclusions
 ----
 
-I think I see an association between Clojure and Scala. Maybe not the
-other functional ones? Bash, C, and SQL seem to go together like
-peanut butter, jelly, and bread. C and JavaScript look like they might
-avoid each other. Swift and Objective-C look like they are friends,
-which makes a heck of a lot of sense.
+*By inspection of counts of co-occurence:* I think I see an
+association between Clojure and Scala. Maybe not the other functional
+ones? C and JavaScript look like they might avoid each other. Swift
+and Objective-C look like they are friends, which makes a heck of a
+lot of sense.
+
+*By association rules:* Bash, C, and SQL go together like peanut
+butter, jelly, and bread.
 
 Methods
 ----
 
-There is a Twitter survey going on, using #code2014. See
-http://www.code2014.com/
+There is a Twitter survey going on, using #code2014. I decided to use
+the tweets in response to that survey as a data set.
 
-I decided to use the tweets in response to that survey as a data set.
-Right now to get the data in, I do something monstrously ugly.
-Process: go to Twitter.com, search for the hashtag, hit the keyboard
-"end" key a bunch of times so it loads more tweets, and copy-paste the
-resulting long Web page out of the browser window and into a plain
-text file called `dump.txt`. Obviously I wanted to do this fast (read:
-1 hour) and not right. These people are doing it right:
+1. Right now to get the data in, I do something monstrously ugly. Go
+to Twitter.com, search for the hashtag, hit the keyboard "end" key a
+bunch of times so it loads more tweets, and copy-paste the resulting
+long Web page out of the browser window and into a plain text file
+called `dump.txt`. Obviously I wanted to do this fast (read: 1 hour)
+and not right. These people are doing it right:
 https://github.com/hybridgroup/hashcode
 
-Usage:
+2. `./count.py dump.txt > output.txt`
 
-    ./analyze.py dump.txt > output.txt
+3. Inspect `output.txt` which is the counts of how many times two
+items (languages) co-occur in the same "market basket" (survey
+respondent in 2014). Draw your own conclusions from squinting at the
+data.
 
-So far it just outputs the counts of how many times two items
-(languages) co-occur in the same "market basket" (survey respondent in
-2014). No real association rule mining (confidence, support, cosine,
-etc.)
+4. `./item_sets.py dump.txt > transactions.txt`
+
+5. Use R to run `ARMine.R`
 
 To do
 ----
@@ -52,9 +56,11 @@ To do
 * For data import, use a package that actually uses the Twitter API.
 Such as: https://github.com/sixohsix/twitter
 
-* For analysis, use an actual association rules package. Such as:
-http://www.cs.umb.edu/~laur/ARMiner/ or
-http://cran.r-project.org/web/packages/arules/index.html See
-www.cse.msu.edu/~ptan/papers/IS.pdf for more on association rules.
-
 * Heat map, obvs.
+
+References
+----
+* http://www.cs.umb.edu/~laur/ARMiner/
+* http://cran.r-project.org/web/packages/arules/index.html
+* www.cse.msu.edu/~ptan/papers/IS.pdf
+* http://www.code2014.com/

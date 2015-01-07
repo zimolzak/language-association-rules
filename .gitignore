@@ -1,3 +1,7 @@
 dump.txt
 meds.txt
 transactions.txt
+*.png
+.RData
+.Rapp.history
+.Rhistory
